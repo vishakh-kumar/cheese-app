@@ -82,7 +82,9 @@ app.delete("/cheese/:id", async (req, res) => {
 //=========================
 app.put("/cheese/:id", async (req, res) => {
   try {
-    res.json(await Cheese.findByIdAndUpdate(req.params.id));
+    res.json(
+      await Cheese.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    );
   } catch (error) {
     res.status(400).json(error);
   }
