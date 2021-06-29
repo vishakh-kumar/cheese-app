@@ -49,7 +49,10 @@ app.use(express.json()); //parse json data
 //=========================
 //       ROUTES
 //=========================
-
+//test route so its not empty
+app.get("/", (req, res) => {
+  res.send("CHEEEEEEESE");
+});
 //=========================
 //       Index Route
 //=========================
