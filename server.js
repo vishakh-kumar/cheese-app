@@ -69,7 +69,7 @@ app.get("/cheese", async (req, res) => {
 //=========================
 //       Delete Route
 //=========================
-app.delete("cheese/:id", async (req, res) => {
+app.delete("/cheese/:id", async (req, res) => {
   try {
     res.json(await Cheese.findByIdAndRemove(req.params.id));
   } catch (error) {
@@ -80,7 +80,7 @@ app.delete("cheese/:id", async (req, res) => {
 //=========================
 //       Update Route
 //=========================
-app.put("cheese/:id", async (req, res) => {
+app.put("/cheese/:id", async (req, res) => {
   try {
     res.json(await Cheese.findByIdAndUpdate(req.params.id));
   } catch (error) {
